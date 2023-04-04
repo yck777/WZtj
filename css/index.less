@@ -1,0 +1,347 @@
+#index {
+  width: 100%;
+  height: 100%;
+  background: url('../img/bg.jpg') no-repeat;
+  background-color: 100% 100%;
+  // background-color: #010528;
+  overflow-x: auto;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.hearer-top {
+  width: 100%;
+  height: 5rem;
+  background: url('../img/top.png') no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+
+  .title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 26px;
+    background: linear-gradient(92deg, #00b7ff, #00f2ff 48.85254%, #01aaff);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.bor_ctr {
+  position: relative;
+  width: 85%;
+  height: 35rem;
+  perspective: 800px;
+  background: linear-gradient(45deg,
+      rgba(50, 95, 222, .1) 0%,
+      rgba(50, 95, 222, .1) 10%,
+      rgba(50, 95, 222, .1) 20%,
+      rgba(50, 95, 222, .1) 30%,
+      rgba(50, 95, 222, .1) 40%,
+      rgba(50, 95, 222, .2) 50%,
+      rgba(50, 95, 222, .3) 60%,
+      rgba(50, 95, 222, .4) 70%,
+      rgba(50, 95, 222, .5) 80%,
+      rgba(50, 95, 222, .6) 90%,
+      rgba(50, 95, 222, .7) 100%),
+    linear-gradient(-45deg,
+      rgba(50, 95, 222, .1) 0%,
+      rgba(50, 95, 222, .1) 10%,
+      rgba(50, 95, 222, .1) 20%,
+      rgba(50, 95, 222, .1) 30%,
+      rgba(50, 95, 222, .1) 40%,
+      rgba(50, 95, 222, .2) 50%,
+      rgba(50, 95, 222, .3) 60%,
+      rgba(50, 95, 222, .4) 70%,
+      rgba(50, 95, 222, .5) 80%,
+      rgba(50, 95, 222, .6) 90%,
+      rgba(50, 95, 222, .7) 100%);
+  box-shadow: inset 0 0 10px #00b9f2;
+  margin: 15px 500px 0 500px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent -4%, #03ecff 50%, transparent 100%);
+  }
+}
+
+.cont-flex {
+  padding: 0.5rem;
+  height: calc(100% - 15rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .flex_center {
+    flex: 1;
+  }
+
+  .flex_left {
+    background: linear-gradient(-45deg, rgba(50, 95, 222, 0.1) 10%, rgba(50, 95, 222, 0.1) 10%, rgba(50, 95, 222, 0.2) 20%, rgba(50, 95, 222, 0.3) 30%, rgba(50, 95, 222, 0.4) 40%, rgba(50, 95, 222, 0.5) 50%, rgba(50, 95, 222, 0.6) 60%, rgba(50, 95, 222, 0.7) 70%, rgba(50, 95, 222, 0.8) 80%, rgba(50, 95, 222, 0.9) 90%, rgb(50 95 222) 100%);
+    box-shadow: inset 0 0 10px #00b9f2;
+    transform: rotateY(-37deg);
+    transform-origin: left center;
+    width: 15rem;
+    height: 35rem;
+    float: right;
+    margin-right: -255px;
+  }
+
+  .flex_center {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex_right {
+    background: linear-gradient(45deg, rgba(50, 95, 222, 0.1) 10%, rgba(50, 95, 222, 0.1) 10%, rgba(50, 95, 222, 0.2) 20%, rgba(50, 95, 222, 0.3) 30%, rgba(50, 95, 222, 0.4) 40%, rgba(50, 95, 222, 0.5) 50%, rgba(50, 95, 222, 0.6) 60%, rgba(50, 95, 222, 0.7) 70%, rgba(50, 95, 222, 0.8) 80%, rgba(50, 95, 222, 0.9) 90%, rgb(50 95 222) 100%);
+    box-shadow: inset 0 0 10px rgb(32, 120, 198);
+    transform: rotateY(37deg);
+    transform-origin: right center;
+    width: 15rem;
+    height: 35rem;
+    float: left;
+    margin-left: -255px;
+
+  }
+
+  .flex_left_c,
+  .flex_right_c {
+    position: absolute;
+    right: -22rem;
+    top: 0;
+    width: 20rem;
+    height: 35rem;
+  }
+
+  .flex_right_c {
+    position: absolute;
+    left: -21rem;
+    right: 0;
+    top: 0;
+  }
+}
+
+// 出警次数
+.alarm {
+  height: 31rem;
+  display: flex;
+  flex-direction: column;
+
+  .alarm_num {
+    display: flex;
+    width: 100%;
+    color: #61daff;
+    justify-content: space-around;
+    padding: 20px 0;
+
+    .alarm_num_fz {
+      display: flex;
+      position: relative;
+
+      p {
+        margin-right: 6px;
+        font-size: 14px;
+      }
+
+      &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        bottom: -15px;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(to right, #3ebffb 0%, #2d81f7 50%, #1c50fb 100%);
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .alarm_chart {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+// 中间
+.ctr_cas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+
+  .canvas {
+    position: relative;
+
+    #circle {
+      position: relative;
+      z-index: 9;
+    }
+
+    .label {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(55, 216, 224);
+      z-index: 10;
+      font-size: 24px;
+      text-align: center;
+      font-weight: bold;
+      width: 50px;
+    }
+
+    .canvas_bor {
+      position: absolute;
+      width: 22rem;
+      height: 12rem;
+      background: linear-gradient(to bottom,
+          rgba(16, 69, 173) 0%,
+          rgb(13, 36, 106) 50%,
+          rgb(16, 69, 173) 100%);
+      box-shadow: 0 0 5px rgb(18, 63, 195);
+
+      .canvas_label {
+        position: absolute;
+
+        & p:nth-child(1) {
+          color: #fff;
+          font-size: 18px;
+        }
+
+        & p:nth-child(2) {
+          color: rgb(43, 116, 167);
+          text-align: center;
+          font-size: 16px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+      }
+
+      .circle2 {
+        position: absolute;
+        right: 50px;
+        bottom: 30px;
+      }
+
+      .circle3 {
+        position: absolute;
+        left: 50px;
+        bottom: 30px;
+      }
+
+      .circle4 {
+        position: absolute;
+        right: 50px;
+        top: 30px;
+      }
+
+      .circle5 {
+        position: absolute;
+        left: 50px;
+        top: 30px;
+      }
+    }
+
+    .canvas_bor:nth-of-type(1) {
+      border-top-right-radius: 80px;
+      border-bottom-left-radius: 80px;
+      top: -125px;
+      left: -285px;
+
+      .canvas_label {
+        right: 170px;
+        top: 56%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .canvas_bor:nth-of-type(2) {
+      border-top-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+      top: -125px;
+      left: 85px;
+
+      .canvas_label {
+        left: 170px;
+        top: 56%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .canvas_bor:nth-of-type(3) {
+      border-top-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+      bottom: -125px;
+      left: -285px;
+
+      .canvas_label {
+        right: 170px;
+        bottom: 36%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .canvas_bor:nth-of-type(4) {
+      border-top-right-radius: 80px;
+      border-bottom-left-radius: 80px;
+      bottom: -125px;
+      left: 85px;
+
+      .canvas_label {
+        left: 170px;
+        bottom: 36%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+// car的data数据
+.group_data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+
+
+.letters {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  p {
+    color: rgb(29 152 210 / 30%);
+    width: 10px;
+    font-size: 20px;
+    word-break: break-all;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>温州特警警保大屏</title>
+</head>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+<body>
+  <canvas id="canvas"></canvas>
+    <div id="index">
+      <!-- 头部标题 -->
+      <header class="hearer-top">
+        <div class="title">温州特警警保驾驶舱</div>
+      </header>
+      <!-- 内容左侧 -->
+        <aside class="cont-flex">
+          <div class="bor_ctr"> 
+            <div class="flex_left"></div>
+            <div class="flex_right"></div>
+            <div class="flex_left_c">
+              <div class="top">
+                <div class="title">
+                  <span>出警情况</span>   
+                  <div class="slider">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+              </div>           
+              <div class="alarm">
+                <div class="alarm_num">
+                  <div class="alarm_num_fz">
+                    <p>0000</p>
+                    <p>今日出警次数</p>
+                  </div>
+                  <div class="alarm_num_fz">
+                    <p>0000</p>
+                    <p>累计出警次数</p>
+                  </div>
+                </div>
+                <div class="alarm_chart" id="alarmChart2"></div>
+              </div>
+            </div>
+            <div class="flex_right_c">
+              <div class="top">
+                <div class="title">
+                  <span>出警情况</span>   
+                  <div class="slider">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+              </div>           
+              <div class="alarm">
+                <div class="alarm_num">
+                  <div class="alarm_num_fz">
+                    <p>0000</p>
+                    <p>今日出警次数</p>
+                  </div>
+                  <div class="alarm_num_fz">
+                    <p>0000</p>
+                    <p>累计出警次数</p>
+                  </div>
+                </div>
+                <div class="alarm_chart" id="alarmChart"></div>
+              </div>
+            </div>
+           <!-- 中间内容 -->
+            <div class="ctr_cas">
+              <div class="ctr_top">
+                <div class="title">
+                  <span>车辆进出情况分析</span>   
+                  <div class="slider">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+              </div>             
+              <div class="canvas">
+                <p class="label">智能管控</p>
+                <canvas id="circle" width=150" height="150"></canvas>
+                <div class="canvas_bor">
+                  <div class="canvas_label">
+                    <p>今日进出车辆数</p>
+                    <p>西北门</p>
+                  </div>
+                  <div class="circle2">
+                    <div class="group_data">123324</div>
+                    <canvas id="circle2" width=100" height="100"></canvas>
+                  </div>
+                </div>
+                <div class="canvas_bor">
+                  <div class="canvas_label">
+                    <p>今日进出车辆数</p>
+                    <p>西北门</p>
+                  </div>
+                  <div class="circle3">
+                    <div class="group_data">123</div>
+                    <canvas id="circle3" width=100" height="100"></canvas>
+                  </div>
+                </div>
+                <div class="canvas_bor">
+                  <div class="canvas_label">
+                    <p>今日进出车辆数</p>
+                    <p>西北门</p>
+                  </div>
+                  <div class="circle4">
+                    <div class="group_data">123</div>
+                    <canvas id="circle4"  width=100" height="100"></canvas>
+                  </div>
+                </div>
+                <div class="canvas_bor">
+                  <div class="canvas_label">
+                    <p>今日进出车辆数</p>
+                    <p>西北门</p>
+                  </div>
+                  <div class="circle5">
+                    <div class="group_data">123</div>
+                    <canvas id="circle5"  width=100" height="100"></canvas>
+                </div>
+              </div>
+              </div>
+            </div>
+            <!-- 底部 -->
+            <footer class="footer">
+              <div class="nav_item">
+                  <div class="bor">
+                    <div class="bor2">
+                        <div class="bor3">
+                          <div class="circle canvasCircle1"></div>
+                          <div class="circle canvasCircle2"></div>                   
+                        </div>
+                        <div class="bor4">
+                          <div>
+                            <img src="img/001.png" alt="">
+                          </div>
+                        </div>
+                    </div>
+                    <canvas id="canvasCircle1" class="canvasCircle" width="110" height="110"></canvas>
+                  </div>            
+                  <div class="indexTitle indexImg">首页</div>
+              </div>
+              <div class="nav_item">
+                  <div class="bor">
+                    <div class="bor2">
+                        <div class="bor3">
+                          <div class="circle canvasCircle1"></div>
+                          <div class="circle canvasCircle2"></div>                   
+                        </div>
+                        <div class="bor4">
+                          <div>
+                            <img src="img/002.png" alt="">
+                          </div>
+                        </div>
+                    </div>
+                    <canvas id="canvasCircle2" class="canvasCircle" width="110" height="110"></canvas>
+                  </div>         
+                <div class="indexTitle">首页2</div>
+              </div>
+              <div class="nav_item">
+                  <div class="bor">
+                    <div class="bor2">
+                        <div class="bor3">
+                          <div class="circle canvasCircle1"></div>
+                          <div class="circle canvasCircle2"></div>                   
+                        </div>
+                        <div class="bor4">
+                          <div>
+                            <img src="img/003.png" alt="">
+                          </div>
+                        </div>
+                    </div>
+                    <canvas id="canvasCircle3" class="canvasCircle" width="110" height="110"></canvas>
+                  </div>               
+                <div class="indexTitle">首页3</div>
+              </div>
+              <div class="nav_item">
+                  <div class="bor">
+                    <div class="bor2">
+                        <div class="bor3">
+                          <div class="circle canvasCircle1"></div>
+                          <div class="circle canvasCircle2"></div>                   
+                        </div>
+                        <div class="bor4">
+                          <div>
+                            <img src="img/004.png" alt="">
+                          </div>
+                        </div>
+                    </div>
+                    <canvas id="canvasCircle4" class="canvasCircle" width="110" height="110"></canvas>
+                  </div>     
+                <div class="indexTitle">首页4</div>
+              </div>
+            </footer>
+        </div>
+        </aside>
+        <!-- <div class="letters"></div> -->
+    </div>
+</body>
+<script  src="js/canvas.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/echarts-4.6.0.min.js"></script>
+<script src="js/alarmChart.js"></script>
+<script src="js/canvas2.js"></script>
+<script src="js/canvas3.js"></script>
+<script src="js/canvaNav.js"></script>
+</html>
